@@ -3,24 +3,15 @@
 #include <iostream>
 #include <string>
 #include<windows.h>
-void init();
+
 int main()
 {
     Clock time;
-    const int WINDOW_WIDTH = 800;
-    const int WINDOW_HEIGHT = 800;
     const int CLOCK_RADIUS = 150;
-    const int HOUR_HAND_LENGTH = 60;
-    const int MINUTE_HAND_LENGTH = 80;
-    const int SECOND_HAND_LENGTH = 100;
-
     sf::RenderWindow window(sf::VideoMode(1200, 900), "App");
-
     sf::Texture texture;
     if (!texture.loadFromFile("background.jpg"))
         return -1;
-
-    // Create a sprite
     sf::Sprite sprite(texture);
 
     sf::Font font;
@@ -42,7 +33,9 @@ int main()
         textRect.top + textRect.height / 2.0f);
 
     // set the position to the center of the window
-    text.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 3.0f));
+    text.setPosition(sf::Vector2f(window.getSize().x / 4.5f, window.getSize().y / 3.0f));
+
+    CClock watch(CLOCK_RADIUS,window.getSize().x, window.getSize().y);
     while (window.isOpen())
     {
         sf::Event event;
@@ -52,69 +45,24 @@ int main()
                 window.close();
         }
         window.clear(sf::Color::White);
-        //window.draw(sprite);
+        window.draw(sprite);
         //drow the clock
-      
-        // Draw clock face
-        sf::CircleShape clockFace(CLOCK_RADIUS);
-        clockFace.setFillColor(sf::Color::White);
-        clockFace.setOutlineThickness(2);
-        clockFace.setOutlineColor(sf::Color::Black);
-        clockFace.setOrigin(CLOCK_RADIUS, CLOCK_RADIUS);
-        clockFace.setPosition(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
-        window.draw(clockFace);
+        watch.clockface(window);
+        watch.numbers(window);
+        watch.hour(window, time);
+        watch.minute(window, time);
+        watch.second(window, time);
 
-        // Draw hour indicators
-        sf::Font font;
-        font.loadFromFile("arial.ttf"); // Replace with your font path
-        for (int i = 0; i < 12; ++i) {
-            sf::Text text(std::to_string(i + 1), font, 24);
-            text.setFillColor(sf::Color::Black);
-            text.setOrigin(text.getGlobalBounds().width / 2, text.getGlobalBounds().height / 2);
-            float angle = (i - 2) * (360 / 12) * (3.14159265359 / 180); // Convert degrees to radians
-            float x = WINDOW_WIDTH / 2 + (CLOCK_RADIUS - 20) * cos(angle);
-            float y = WINDOW_HEIGHT / 2 + (CLOCK_RADIUS - 20) * sin(angle);
-            text.setPosition(x, y);
-            window.draw(text);
-        }
-
-        // Draw hour hand
-        sf::RectangleShape hourHand(sf::Vector2f(HOUR_HAND_LENGTH, 4));
-        hourHand.setFillColor(sf::Color::Black);
-        hourHand.setOrigin(0,2);
-        hourHand.setPosition(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
-        hourHand.rotate((time.hours() * 30) + (time.minutes() * 0.5)); // 30 degrees per hour, 0.5 degrees per minute
-        window.draw(hourHand);
-
-        // Draw minute hand
-        sf::RectangleShape minuteHand(sf::Vector2f(MINUTE_HAND_LENGTH, 4));
-        minuteHand.setFillColor(sf::Color::Black);
-        minuteHand.setOrigin(0, 2);
-        minuteHand.setPosition(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
-        minuteHand.rotate(time.minutes() * 6); // 6 degrees per minute
-        window.draw(minuteHand);
-
-        // Draw second hand
-        sf::RectangleShape secondHand(sf::Vector2f(SECOND_HAND_LENGTH, 2));
-        secondHand.setFillColor(sf::Color::Red);
-        secondHand.setOrigin(0, 1);
-        secondHand.setPosition(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
-        secondHand.rotate(time.seconds() * 6); // 6 degrees per second
-        window.draw(secondHand);
-
-        text.setString(time.getter()); // Convert sf::String to std::string
-        //window.clear();
-        //window.draw(sprite);
+        text.setString(time.getter());
         time.update();
-        Sleep(1000);
-        window.draw(text); // Draw the text
+        //Sleep(1000);
+        window.draw(text);
         window.display();
+        //std::cout<<time.getter()<<'\n';
     }
 
     return 0;
 }
-
-
 
 /*#include <SFML/Graphics.hpp>
 #include <cmath>
