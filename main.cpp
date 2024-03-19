@@ -1,5 +1,6 @@
 #include "SFML/Graphics.hpp"
-#include "Time.h";
+#include "Time.h"
+#include "Button.h"
 #include <iostream>
 #include <string>
 #include<windows.h>
@@ -31,13 +32,14 @@ int main()
     sf::FloatRect textRect = text.getLocalBounds();
     text.setOrigin(textRect.left + textRect.width / 2.0f,
         textRect.top + textRect.height / 2.0f);
-
     // set the position to the center of the window
-    text.setPosition(sf::Vector2f(window.getSize().x / 4.5f, window.getSize().y / 3.0f));
+    text.setPosition(sf::Vector2f(window.getSize().x / 4.5f, window.getSize().y / 6.5f));
 
     CClock watch(CLOCK_RADIUS,window.getSize().x, window.getSize().y);
+    Button timer(window.getSize().x / 1.5f, window.getSize().y / 2.f, 100, 100, "timer", sf::Color::Red, sf::Color::White, sf::Color::Blue);
     while (window.isOpen())
     {
+        sf::Vector2i mousePos = sf::Mouse::getPosition(window);
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -53,9 +55,14 @@ int main()
         watch.minute(window, time);
         watch.second(window, time);
 
+        timer.render(window);
+        sf::Vector2f mousePosFloat(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y));
+        std::cout << mousePosFloat.x << " " << mousePosFloat.y <<" ";
+        timer.update(mousePosFloat);
         text.setString(time.getter());
         time.update();
         //Sleep(1000);
+
         window.draw(text);
         window.display();
         //std::cout<<time.getter()<<'\n';

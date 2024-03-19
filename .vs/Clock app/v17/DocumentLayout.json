@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{75B01083-DBE1-4254-AAB2-5415D8F3D792}|Clock app.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{75B01083-DBE1-4254-AAB2-5415D8F3D792}|Clock app.vcxproj|C:\\Users\\teosa\\Desktop\\Clock-app\\Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{75B01083-DBE1-4254-AAB2-5415D8F3D792}|Clock app.vcxproj|solutionrelative:Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{75B01083-DBE1-4254-AAB2-5415D8F3D792}|Clock app.vcxproj|C:\\Users\\teosa\\Desktop\\Clock-app\\Button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{75B01083-DBE1-4254-AAB2-5415D8F3D792}|Clock app.vcxproj|solutionrelative:Button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{75B01083-DBE1-4254-AAB2-5415D8F3D792}|Clock app.vcxproj|C:\\Users\\teosa\\Desktop\\Clock-app\\Time.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{75B01083-DBE1-4254-AAB2-5415D8F3D792}|Clock app.vcxproj|solutionrelative:Time.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75B01083-DBE1-4254-AAB2-5415D8F3D792}|Clock app.vcxproj|C:\\Users\\teosa\\Desktop\\Clock-app\\Button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{75B01083-DBE1-4254-AAB2-5415D8F3D792}|Clock app.vcxproj|solutionrelative:Button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,22 +36,9 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\teosa\\Desktop\\Clock-app\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAADcAAAAmAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAnwD0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-17T06:36:14.344Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Time.h",
-              "DocumentMoniker": "C:\\Users\\teosa\\Desktop\\Clock-app\\Time.h",
-              "RelativeDocumentMoniker": "Time.h",
-              "ToolTip": "C:\\Users\\teosa\\Desktop\\Clock-app\\Time.h",
-              "RelativeToolTip": "Time.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-03-17T15:32:26.354Z",
               "EditorCaption": ""
             },
             {
@@ -58,9 +49,35 @@
               "RelativeDocumentMoniker": "Time.cpp",
               "ToolTip": "C:\\Users\\teosa\\Desktop\\Clock-app\\Time.cpp",
               "RelativeToolTip": "Time.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAeAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAEUAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-03-17T11:50:13.713Z",
+              "WhenOpened": "2024-03-19T05:51:05.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Button.h",
+              "DocumentMoniker": "C:\\Users\\teosa\\Desktop\\Clock-app\\Button.h",
+              "RelativeDocumentMoniker": "Button.h",
+              "ToolTip": "C:\\Users\\teosa\\Desktop\\Clock-app\\Button.h",
+              "RelativeToolTip": "Button.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-19T05:20:13.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Button.cpp",
+              "DocumentMoniker": "C:\\Users\\teosa\\Desktop\\Clock-app\\Button.cpp",
+              "RelativeDocumentMoniker": "Button.cpp",
+              "ToolTip": "C:\\Users\\teosa\\Desktop\\Clock-app\\Button.cpp",
+              "RelativeToolTip": "Button.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-19T05:29:21.792Z",
               "EditorCaption": ""
             }
           ]

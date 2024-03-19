@@ -48,7 +48,7 @@ int Clock::hours()
 {
     return hour;
 }
-CClock::CClock(int CLOCK_RADIUS, int sizex, int sizey) : radius(CLOCK_RADIUS), xsize(sizex/4.5f), ysize(sizey/1.5f){}
+CClock::CClock(int CLOCK_RADIUS, int sizex, int sizey) : radius(CLOCK_RADIUS), xsize(sizex/4.5f), ysize(sizey/2.2f){}
 void CClock::numbers(sf::RenderWindow& window)
 {
     sf::Font font;
