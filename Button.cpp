@@ -11,13 +11,13 @@ Button::Button(float x, float y, float width,float height, std::string text,sf::
 	this->text.setCharacterSize(12);
 	this->buttonState = btn_idle;
 	this->idleColor = idleColor;
-	this->idleColor = hoverColor;
-	this->idleColor = activeColor;
+	this->hoverColor = hoverColor;
+	this->activeColor = activeColor;
 
 	this->text.setFillColor(this->idleColor);
 	this->text.setOrigin(this->shape.getPosition().x, this->shape.getPosition().y);
-	this->text.setPosition(this->shape.getPosition().x + this->shape.getGlobalBounds().width / 2.f,
-		this->shape.getPosition().y + this->shape.getGlobalBounds().height / 2.f);
+	this->text.setPosition((this->shape.getPosition().x + this->shape.getGlobalBounds().width) / 2.f,
+		(this->shape.getPosition().y + this->shape.getGlobalBounds().height )/ 2.f);
 }
 void Button::render(sf::RenderWindow& target)
 {
@@ -35,6 +35,7 @@ void Button::update(sf::Vector2f mousePos)
 		std::cout << "da";
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
+			system("CLS");
 			this->buttonState = btn_pressed;
 		}
 	}
@@ -42,11 +43,18 @@ void Button::update(sf::Vector2f mousePos)
 	{
 	case btn_idle:
 		this->shape.setFillColor(this->idleColor);
+		break;
 	case btn_hover:
-		this->shape.setFillColor(sf::Color::Red);
+		this->shape.setFillColor(this->hoverColor);
+		std::cout << "aici e";
+		break;
 	case btn_pressed:
-		this->shape.setFillColor(this->activeColor);
-	default:
+		this->shape.setFillColor(sf::Color::Magenta);
 		break;
 	}
+}
+void Button::testfunction()
+{
+	std::cout << this->buttonState << '\n';
+	system("CLS");
 }

@@ -36,7 +36,7 @@ int main()
     text.setPosition(sf::Vector2f(window.getSize().x / 4.5f, window.getSize().y / 6.5f));
 
     CClock watch(CLOCK_RADIUS,window.getSize().x, window.getSize().y);
-    Button timer(window.getSize().x / 1.5f, window.getSize().y / 2.f, 100, 100, "timer", sf::Color::Red, sf::Color::White, sf::Color::Blue);
+    Button timer(window.getSize().x / 2.f, window.getSize().y / 2.f, 100, 100, "timer", sf::Color::Green, sf::Color::Red, sf::Color::Blue);
     while (window.isOpen())
     {
         sf::Vector2i mousePos = sf::Mouse::getPosition(window);
@@ -46,7 +46,7 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        window.clear(sf::Color::White);
+        window.clear();
         window.draw(sprite);
         //drow the clock
         watch.clockface(window);
@@ -61,8 +61,10 @@ int main()
         timer.update(mousePosFloat);
         text.setString(time.getter());
         time.update();
+        //timer.testfunction();
         //Sleep(1000);
 
+        //window.draw(sprite);
         window.draw(text);
         window.display();
         //std::cout<<time.getter()<<'\n';
