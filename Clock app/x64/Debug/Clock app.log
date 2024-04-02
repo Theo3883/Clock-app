@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\teosa\Desktop\Clock-app\main.cpp(49,100): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\teosa\Desktop\Clock-app\main.cpp(49,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\teosa\Desktop\Clock-app\main.cpp(50,101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\teosa\Desktop\Clock-app\main.cpp(50,95): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Clock app.vcxproj -> C:\Users\teosa\Desktop\Clock-app\x64\Debug\Clock app.exe
